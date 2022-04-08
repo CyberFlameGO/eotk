@@ -439,6 +439,8 @@ http {
       end
     end
 
+    ngx.header["Content-Security-Policy"] = "%CSP_OVERRIDE_VALUE%"
+
     %%IF %DEBUG_CSP_SANDBOX%
     local csp_sandbox =
     "sandbox allow-forms allow-modals allow-orientation-lock"..
